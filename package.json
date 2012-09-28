@@ -1,0 +1,13 @@
+{
+    "name" : "space-invaders",
+    "version" : "0.0.1",
+    "engines": {
+        "node": "0.8.x",
+        "npm":  "1.0.x"
+    },
+    "dependencies" : {
+        "static-cling": ">=0.0.1"
+
+    },
+    "main" : "index.js"
+}

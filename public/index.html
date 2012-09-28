@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Space Invaders</title>
+        <meta name="description" content="">
+        <meta name="author" content="Kevin Isom">
+<!--  Mobile Viewport Fix        j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag   device-width : Occupy full width of the screen in its current orientation  initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height  maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width  -->  
+        <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
+        <link rel="stylesheet" href="/css/style.css">
+    </head>
+    <!--[if lt IE 7 ]><body class="ie6 yui3-skin-sam"><![endif]-->
+    <!--[if IE 7 ]><body class="ie7 yui3-skin-sam yui-skin-sam"><![endif]-->
+    <!--[if IE 8 ]><body class="ie8 yui3-skin-sam yui-skin-sam"><![endif]-->
+    <!--[if IE 9 ]><body class="ie9 yui3-skin-sam yui-skin-sam"><![endif]-->
+    <!--[if (gt IE 9)|!(IE)]><!--> <body class="yui3-skin-sam yui-skin-sam"><!--<![endif]-->
+        <header> </header>
+        <div id="main">
+            <div id="cr-stage">
+            </div>
+        </div>
+        <footer> 
+            <a href="#">Pause</a>
+        </footer>
+        <script src="http://yui.yahooapis.com/3.7.2/build/yui/yui-min.js"></script>
+        <script type="text/javascript" src="/js/libs/crafty.min.js"></script>
+        <script src="/js/game.js"></script>
+        <script type="text/javascript">
+            GameInit();
+
+            YUI().use('node', 'event', function(Y){
+                Y.on('domready', function(){
+                    Y.one('a').on('click', function(e){
+                        e.preventDefault();
+                        if(Crafty.isPaused()){
+                            Crafty.pause()
+                        }else{
+                            Crafty.pause();
+                        }
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>
